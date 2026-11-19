@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from flask import Flask, request, jsonify, send_file
 from sqlalchemy import create_engine, inspect, text
 
-from agent import data, querypilot_agent
+from agent import data, get_querypilot_agent
 import json
 
 load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
@@ -144,7 +144,7 @@ def call():
 
     try:
         schema_json = live_schema()
-        response = querypilot_agent.invoke({
+        response = get_querypilot_agent().invoke({
             "input": question,
             "data": schema_json
         })

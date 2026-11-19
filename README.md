@@ -86,6 +86,22 @@ Rows, changes, or a clear error
 
 6. Open [http://127.0.0.1:5001/#workspace](http://127.0.0.1:5001/#workspace).
 
+## Deploy on Vercel
+
+Import the repository into Vercel and add these environment variables in the project settings:
+
+```text
+GEMINI_API_KEY
+GEMINI_MODEL=gemini-3.5-flash-lite
+ORACLE_USER
+ORACLE_PASSWORD
+ORACLE_HOST
+ORACLE_PORT
+ORACLE_SERVICE
+```
+
+Vercel can host the Flask interface and Gemini API, but a local Oracle database is not reachable from Vercel unless it is exposed through a secure network connection. Use a hosted Oracle endpoint or keep database execution local.
+
 ## Database connection
 
 The default Oracle connection uses:

@@ -683,14 +683,6 @@ if not api_key:
     except OSError as error:
         raise ValueError(f"Unable to read the .env file: {error}") from error
 
-if not api_key:
-    raise ValueError("Please set GEMINI_API_KEY or GOOGLE_API_KEY in the .env file.")
-
-llm = ChatGoogleGenerativeAI(
-    model=os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite"),
-    google_api_key=api_key
-)
-
 # ---------------------------------------------------------
 # 3. PROMPT: pass the embedded JSON through {data}
 # ---------------------------------------------------------
@@ -739,14 +731,25 @@ Format:
 database_json = json.dumps(data, indent=2, ensure_ascii=False)
 
 tools = []
-agent = create_tool_calling_agent(llm=llm, tools=tools, prompt=prompt)
-querypilot_agent = AgentExecutor(
-    agent=agent,
-    tools=tools,
-    verbose=False,
-    max_iterations=5,
-    handle_parsing_errors=True
-)
+querypilot_agent = None
+if api_key:
+    llm = ChatGoogleGenerativeAI(
+        model=os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite"),
+        google_api_key=api_key
+    )
+    agent = create_tool_calling_agent(llm=llm, tools=tools, prompt=prompt)
+    querypilot_agent = AgentExecutor(
+        agent=agent,
+        tools=tools,
+        verbose=False,
+        max_iterations=5,
+        handle_parsing_errors=True
+    )
+
+def get_querypilot_agent():
+    if querypilot_agent is None:
+        raise RuntimeError("Gemini is not configured. Set GEMINI_API_KEY in the deployment environment.")
+    return querypilot_agent
 
 # ---------------------------------------------------------
 # 5. ASK QUESTIONS AND INVOKE THE PIPELINE
@@ -767,7 +770,7 @@ if __name__ == "__main__":
             continue
 
         try:
-            response = querypilot_agent.invoke({
+            response = get_querypilot_agent().invoke({
                 "input": question,
                 "data": database_json
             })
