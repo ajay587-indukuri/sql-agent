@@ -143,7 +143,11 @@ def call():
         return jsonify({"error": "question is required"}), 400
 
     try:
-        schema_json = live_schema()
+        try:
+            schema_json = live_schema()
+        except Exception:
+            schema_json = database_json
+
         response = get_querypilot_agent().invoke({
             "input": question,
             "data": schema_json
