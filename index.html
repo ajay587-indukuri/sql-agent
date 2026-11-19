@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error":"#ffb4ab","outline-variant":"#3b494c","on-secondary-container":"#c4abff","tertiary-fixed":"#d8e2ff","secondary":"#d0bcff","on-secondary":"#3c0091","primary-container":"#00e5ff","secondary-container":"#571bc1","outline":"#849396","surface-container-high":"#272a32","on-surface-variant":"#bac9cc","background":"#11131b","inverse-primary":"#006875","on-tertiary-fixed":"#001a42","on-primary-fixed-variant":"#004f58","primary-fixed-dim":"#00daf3","primary":"#c3f5ff","surface-container":"#1d1f27","on-background":"#e1e2ed","on-error-container":"#ffdad6","on-error":"#690005","error-container":"#93000a","on-tertiary":"#002e6a","on-primary":"#00363d","secondary-fixed-dim":"#d0bcff","surface-container-low":"#191b23","on-secondary-fixed":"#23005c","on-tertiary-fixed-variant":"#004395","on-primary-fixed":"#001f24","tertiary-container":"#bdd0ff","on-secondary-fixed-variant":"#5516be","tertiary-fixed-dim":"#adc6ff","surface-tint":"#00daf3","surface-container-lowest":"#0c0e15","on-surface":"#e1e2ed","surface":"#11131b","surface-dim":"#11131b","on-tertiary-container":"#0055b8","surface-container-highest":"#32343d","tertiary":"#e7ecff","on-primary-container":"#00626e","inverse-surface":"#e1e2ed","primary-fixed":"#9cf0ff","surface-bright":"#373941","inverse-on-surface":"#2e3038","surface-variant":"#32343d","secondary-fixed":"#e9ddff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin":"1rem","space-lg":"1.25rem","margin-desktop":"2rem","gutter-desktop":"1.5rem","space-xl":"2rem","gutter":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"0.75rem"},fontFamily:{"label-sm":["JetBrains Mono"],"body-sm":["Geist"],"body-lg":["Geist"],"code-lg":["JetBrains Mono"],"code-md":["JetBrains Mono"],"headline-lg":["Geist"],"code-sm":["JetBrains Mono"],"headline-md":["Geist"],"label-md":["JetBrains Mono"],"body-md":["Geist"],"headline-xl-mobile":["Geist"],"headline-xl":["Geist"],"headline-lg-mobile":["Geist"]},fontSize:{"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-lg":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"code-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"code-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"600"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script><style>
+:root{color-scheme:dark;--app-bg:#0d1117;--panel:#151c26;--panel-raised:#1b2633;--panel-soft:#111923;--border:#2b3a4b;--text:#f4f7fb;--muted:#b7c4d2;--subtle:#8797a8;--cyan:#6ee7f9;--purple:#c7a6ff}
+html{background:var(--app-bg);scroll-behavior:smooth}
+body{background:var(--app-bg);color:var(--text);font-family:Geist,system-ui,sans-serif}
+button,a,input{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+#workspace-page{background:var(--app-bg);color:var(--text)}
+#workspace-page aside{background:#0b121b!important;border-right:1px solid var(--border);box-shadow:8px 0 24px rgba(0,0,0,.24)!important}
+#workspace-page header{background:rgba(13,17,23,.94)!important;border-bottom:1px solid var(--border);box-shadow:0 6px 24px rgba(0,0,0,.2)!important}
+#workspace-page main{background:var(--app-bg)!important}
+#workspace-page .bg-surface-container-lowest{background:var(--panel-soft)!important}
+#workspace-page .bg-surface-container-low{background:var(--panel)!important}
+#workspace-page .bg-surface-container{background:var(--panel-raised)!important}
+#workspace-page .bg-surface-container-high{background:#243244!important}
+#workspace-page .bg-surface-container-highest{background:#2d3d50!important}
+#workspace-page .text-on-surface,#workspace-page .text-on-surface-variant{color:var(--text)!important}
+#workspace-page .text-outline{color:var(--muted)!important}
+#workspace-page .text-outline-variant{color:#92a4b7!important}
+#workspace-page .text-primary,#workspace-page .text-primary-container{color:var(--cyan)!important}
+#workspace-page .text-secondary,#workspace-page .text-secondary-fixed-dim{color:var(--purple)!important}
+#workspace-page .text-tertiary-fixed{color:#b9d1ff!important}
+#workspace-page .font-body-sm{font-size:13px;line-height:1.6}
+#workspace-page .font-label-sm{font-size:11px;line-height:1.4}
+#workspace-page .font-code-sm{font-size:12px;line-height:1.5}
+#workspace-page .font-code-md{font-size:13px;line-height:1.75}
+#workspace-page .rounded-xl{border:1px solid var(--border);box-shadow:0 18px 48px rgba(0,0,0,.22)}
+#workspace-page .shadow-inner{box-shadow:inset 0 0 0 1px #304257,inset 0 10px 24px rgba(0,0,0,.2)!important}
+#workspace-page #dynamic-response-slot pre{white-space:pre-wrap;word-break:break-word}
+#workspace-page .overflow-x-auto{scrollbar-width:thin}
+#workspace-page code{color:#dbeafe!important}
+#workspace-page .fixed.bottom-0{background:linear-gradient(to top,rgba(13,17,23,1),rgba(13,17,23,.94),transparent)!important}
+#workspace-page input::placeholder{color:#9aabba;opacity:1}
+#workspace-page button:disabled{opacity:.55;cursor:wait}
+#workspace-page .chip-item{border:1px solid var(--border);min-height:36px}
+#workspace-page .chip-item:hover{border-color:#5f7894}
+#workspace-page .font-headline-md,#workspace-page h2,#workspace-page h3{text-wrap:balance}
+#workspace-page .hidden{display:none!important}
+#workspace-page [class~="grid-cols-1"][class~="md:grid-cols-3"]>div{gap:.4rem;padding:1rem;border:1px solid #304257}
+#workspace-page [class~="grid-cols-1"][class~="md:grid-cols-3"]>div>span{display:block}
+#workspace-page [class~="grid-cols-1"][class~="md:grid-cols-3"]>span{display:block}
+#workspace-page .bg-surface-container-low.p-space-lg{gap:1rem}
+#workspace-page .bg-surface-container-lowest.p-space-lg{gap:1.25rem}
+#workspace-page .bg-surface-container-lowest.p-space-lg>div:first-child{margin-bottom:.25rem}
+#workspace-page pre{padding:1.25rem;border-radius:.5rem}
+#workspace-page .text-secondary-fixed-dim{color:#d7bfff!important}
+#workspace-page header>div:first-child{display:none}
+#workspace-page header>div:last-child>div:first-child{display:none}
+#workspace-page #workspace-context-strip{padding:.75rem 1.5rem}
+#workspace-page #workspace-context-strip>div:first-child>div:not(:first-child){display:none}
+#workspace-page #workspace-context-strip>div:last-child{display:none}
+#workspace-page #query-explanation .grid-cols-1{display:none}
+#workspace-page #query-notes{display:none}
+#workspace-page #conversation-stream>.flex.items-start.gap-space-md.max-w-4xl>div:nth-child(2)>div:last-child{display:none}
+#workspace-page #conversation-stream>.flex.items-start.gap-space-md.max-w-5xl>div:nth-child(2)>div:first-child>div:first-child>span:nth-child(2),
+#workspace-page #conversation-stream>.flex.items-start.gap-space-md.max-w-5xl>div:nth-child(2)>div:first-child>div:first-child>span:nth-child(3){display:none}
+#workspace-page #conversation-stream{display:flex}
+#workspace-page #conversation-stream> :not(#dynamic-response-slot){display:none}
+#workspace-page #dynamic-response-slot{width:100%;max-width:820px;margin:0 auto;padding:1.5rem 0}
+#workspace-page #dynamic-response-slot section{width:100%;border:0;box-shadow:none;background:transparent!important}
+#workspace-page #dynamic-response-slot pre{border:1px solid #30363d;border-radius:.5rem;background:#0d1117!important;padding:1rem!important}
+#workspace-page #dynamic-response-slot pre,
+#workspace-page #dynamic-response-slot code{font-family:JetBrains Mono,monospace}
+#workspace-page #query-explanation{padding:1.25rem}
+#workspace-page #query-sql{padding:1.25rem}
+#workspace-page #query-sql .bg-surface-container-lowest{border:1px solid #304257}
+#workspace-page #query-sql .bg-surface-container-lowest pre{margin:0}
+#workspace-page #quick-query-bar{border-bottom:1px solid var(--border)}
+#workspace-page #quick-query-bar button:nth-of-type(n+4){display:none}
+#workspace-page #user-query-meta,#workspace-page #query-status,#workspace-page #query-stats{display:none}
+#workspace-page aside nav a[data-path="lcel-pipeline-inspector"],
+#workspace-page aside nav a[data-path="execution-logs"],
+#workspace-page aside nav a[data-path="docs"]{display:none}
+@media (max-width:900px){#workspace-page aside{width:72px!important}#workspace-page aside span:not(.material-symbols-outlined){display:none}#workspace-page .pl-64{padding-left:72px!important}#workspace-page header{left:72px!important}.px-gutter-desktop{padding-left:1rem!important;padding-right:1rem!important}}
+@media (max-width:640px){#workspace-page aside{width:0!important;padding:0!important;overflow:hidden;border:0}#workspace-page .pl-64{padding-left:0!important}#workspace-page header{left:0!important;padding-left:1rem!important;padding-right:1rem!important}#workspace-page header>div:first-child{display:none}#workspace-page header>div:last-child{width:100%;justify-content:flex-end}#workspace-page header>div:last-child>button:first-of-type{display:none}#workspace-page header>div:last-child>button:last-of-type{font-size:0;padding:.6rem}#workspace-page header>div:last-child>button:last-of-type .material-symbols-outlined{font-size:18px}#workspace-page .fixed.bottom-0{left:0!important;right:0!important;padding:.75rem!important}#workspace-page .fixed.bottom-0 form{padding:.5rem}#workspace-page .fixed.bottom-0 form>div:last-child{display:none}#workspace-page .fixed.bottom-0 input{min-width:0;font-size:14px}#workspace-page .fixed.bottom-0 button{padding:.6rem .75rem}#workspace-page .fixed.bottom-0 button span:first-child{display:none}#workspace-page .fixed.bottom-0 button span:last-child{font-size:18px}#workspace-page .flex.items-start.gap-space-md.max-w-5xl{gap:.65rem}#workspace-page .flex.items-center.justify-between{gap:.75rem;align-items:flex-start}#workspace-page .grid-cols-1.md\\:grid-cols-3{grid-template-columns:1fr}#workspace-page .px-space-lg{padding-left:1rem;padding-right:1rem}#workspace-page .py-space-lg{padding-top:1rem;padding-bottom:1rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style></head>
+<body>
+<div id="landing-page"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-14 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="landing-overview" href="#landing"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center shadow-[0_0_12px_rgba(0,229,255,0.35)]"><span class="material-symbols-outlined text-on-primary-container text-[18px]">terminal</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md font-semibold tracking-tight text-on-surface leading-none">QueryPilot assistant<span class="text-primary-container text-xs ml-1 font-label-sm tracking-wider uppercase">AI</span></span></div></a><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-low shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00e5ff]"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Ready when you are</span></div></div><nav class="hidden md:flex items-center gap-space-xs p-1 rounded bg-surface-container-lowest/60" data-active-classes="bg-surface-container-high text-on-surface font-semibold shadow-[inset_0_0_0_1px_rgba(0,229,255,0.3)]"><a aria-current="page" class="px-space-md py-1 rounded transition-all bg-surface-container-high text-on-surface font-semibold shadow-[inset_0_0_0_1px_rgba(0,229,255,0.3)]" data-path="landing-overview" href="#landing">Home</a><a class="px-space-md py-1 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="query-workspace" href="#workspace">Ask a question</a><a class="px-space-md py-1 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="docs" href="#workspace-docs">Docs</a><a class="px-space-md py-1 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="schema-explorer" href="#workspace-schema-explorer">Schema</a></nav><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant"><span class="text-primary">Oracle SQL</span><span class="text-outline">|</span><span class="text-secondary">Gemini assistant</span></div><a class="hidden sm:inline-flex items-center justify-center px-space-md py-1.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold shadow-[0_0_12px_rgba(0,229,255,0.35)] hover:bg-primary transition-all" data-path="query-workspace" href="#workspace">New Session</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_8px_rgba(0,229,255,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full text-on-surface">
+<!-- Top Ambient Glow Field -->
+<div class="relative w-full overflow-hidden pointer-events-none">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[360px] bg-gradient-to-b from-primary-container/15 via-secondary/10 to-transparent blur-3xl opacity-60"></div>
+</div>
+<!-- Hero Section -->
+<section class="relative w-full px-margin-desktop pt-10 pb-16 max-w-7xl mx-auto flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container shadow-md mb-6">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00e5ff]"></span>
+<span class="font-label-sm text-label-sm text-primary font-mono tracking-wider uppercase">A simpler way to work with your data</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Helpful answers, grounded in your schema</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-4xl tracking-tight leading-tight mb-4">
+      Talk to your database <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary to-secondary">Get a useful query.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8">
+      Describe what you need in plain English. I’ll draft the SQL, explain it, and leave the final call to you.
+    </p>
+<!-- CTAs & Micro-telemetry -->
+<div class="flex flex-wrap items-center justify-center gap-space-md mb-10">
+<a class="inline-flex items-center gap-space-sm px-space-xl py-3 rounded bg-primary-container text-on-primary-container font-headline-md text-headline-md font-semibold shadow-[0_0_24px_rgba(0,229,255,0.4)] hover:bg-primary transition-all duration-200" data-path="query-workspace" href="#workspace">
+<span>Ask your first question</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-sm px-space-lg py-3 rounded bg-surface-container text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-all" href="#api-spec">
+<span class="material-symbols-outlined text-secondary text-[20px]">terminal</span>
+<span>See how it connects</span>
+</a>
+</div>
+<!-- Latency & Fidelity Metrics Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md w-full max-w-3xl">
+<div class="flex items-center justify-center gap-space-sm py-2 px-space-md rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[18px]">bolt</span>
+<span class="font-label-md text-label-md text-on-surface">Quick SQL drafts</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Turn a question into SQL</span>
+</div>
+<div class="flex items-center justify-center gap-space-sm py-2 px-space-md rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">speed</span>
+<span class="font-label-md text-label-md text-on-surface">How QueryPilot helps</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Your question → helpful SQL</span>
+</div>
+<div class="flex items-center justify-center gap-space-sm py-2 px-space-md rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">database</span>
+<span class="font-label-md text-label-md text-on-surface">Oracle SQL support</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">SQL you can review</span>
+</div>
+</div>
+</section>
+<!-- Interactive Live Engine Preview / Workbench -->
+<section class="w-full px-margin-desktop pb-20 max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-2xl relative overflow-hidden">
+<!-- Glow Underlay -->
+<div class="absolute -top-24 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Workbench Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pb-space-md mb-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container inline-block"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-mono tracking-wide">QueryPilot assistant workspace // a small sample database</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-primary font-mono">POST /ask</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-mono">A quick example</span>
+</div>
+</div>
+<!-- Preset Prompt Selector Pills -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-lg">
+<span class="font-label-sm text-label-sm text-outline uppercase font-mono mr-1">Try a sample question:</span>
+<button class="px-space-md py-1 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm hover:bg-primary-container/25 transition-all text-left" id="pill-1" onclick="switchPrompt(1)">
+          “Display students enrolled in Computer Science with marks > 80”
+        </button>
+<button class="px-space-md py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high hover:text-on-surface transition-all text-left" id="pill-2" onclick="switchPrompt(2)">
+          “Find top 3 highest funded departments with professor count”
+        </button>
+<button class="px-space-md py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high hover:text-on-surface transition-all text-left" id="pill-3" onclick="switchPrompt(3)">
+          “List active courses lacking prerequisites in Fall 2024”
+        </button>
+</div>
+<!-- Split Workbench Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Natural Language & Gemini Reasoning (Left 5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container rounded-lg p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-container">chat_bubble</span>
+                User Intent Prompt
+              </span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">Language Input</span>
+</div>
+<div class="font-body-lg text-body-lg text-on-surface font-medium bg-surface-container-lowest p-space-md rounded" id="active-prompt-text">
+              Display students enrolled in Computer Science with marks > 80
+            </div>
+</div>
+<!-- Architectural Logic Decomposition -->
+<div class="bg-surface-container rounded-lg p-space-md flex-1 flex flex-col shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">psychology</span>
+                Assistant notes
+              </span>
+<span class="font-label-sm text-label-sm text-primary-container font-mono">What I found</span>
+</div>
+<div class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant" id="reasoning-steps">
+<div class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm">
+<span class="font-code-sm text-code-sm text-primary font-mono mt-0.5">01</span>
+<div>
+<span class="text-on-surface font-medium">Tables involved:</span> Resolves entities <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">STUDENTS</code>, <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">ENROLLMENTS</code>, and <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">DEPARTMENTS</code>.
+                </div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm">
+<span class="font-code-sm text-code-sm text-secondary font-mono mt-0.5">02</span>
+<div>
+<span class="text-on-surface font-medium">Join Path Validation:</span> <code class="font-code-sm text-code-sm text-on-surface font-mono">s.dept_id = d.dept_id</code> and <code class="font-code-sm text-code-sm text-on-surface font-mono">s.student_id = e.student_id</code> foreign key integrity confirmed.
+                </div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm">
+<span class="font-code-sm text-code-sm text-primary-container font-mono mt-0.5">03</span>
+<div>
+<span class="text-on-surface font-medium">Filter Predicate:</span> Applies case-insensitive condition <code class="font-code-sm text-code-sm text-on-surface font-mono">UPPER(d.dept_name) = 'COMPUTER SCIENCE'</code> and numeric threshold <code class="font-code-sm text-code-sm text-on-surface font-mono">e.marks > 80</code>.
+                </div>
+</div>
+</div>
+<!-- Execution Telemetry Badge -->
+<div class="mt-auto pt-space-md flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                Estimated Cost: 0.042 CPU sec
+              </span>
+<span class="font-mono">Example: schema relationships checked</span>
+</div>
+</div>
+</div>
+<!-- Oracle SQL Output Block (Right 7 Cols) -->
+<div class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-inner">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">code</span>
+<span class="font-label-sm text-label-sm text-on-surface font-mono uppercase tracking-wider">Oracle SQL draft</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface transition-all" id="copy-btn" onclick="copyQuery()">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span id="copy-text">Copy SQL</span>
+</button>
+</div>
+</div>
+<!-- Code Window Surface -->
+<div class="relative bg-surface p-space-md rounded font-mono text-left overflow-x-auto flex-1 flex flex-col justify-between">
+<pre class="font-code-md text-code-md leading-relaxed text-on-surface" id="sql-code-display"><span class="text-primary-container font-semibold">SELECT</span> 
+    s.student_id,
+    s.first_name || <span class="text-secondary">' '</span> || s.last_name <span class="text-primary-container font-semibold">AS</span> student_name,
+    d.dept_name,
+    e.course_id,
+    e.marks
+<span class="text-primary-container font-semibold">FROM</span> 
+    college.students s
+<span class="text-primary-container font-semibold">JOIN</span> 
+    college.departments d <span class="text-primary-container font-semibold">ON</span> s.dept_id = d.dept_id
+<span class="text-primary-container font-semibold">JOIN</span> 
+    college.enrollments e <span class="text-primary-container font-semibold">ON</span> s.student_id = e.student_id
+<span class="text-primary-container font-semibold">WHERE</span> 
+    <span class="text-primary font-semibold">UPPER</span>(d.dept_name) = <span class="text-secondary">'COMPUTER SCIENCE'</span>
+    <span class="text-primary-container font-semibold">AND</span> e.marks > <span class="text-tertiary-fixed font-semibold">80</span>
+<span class="text-primary-container font-semibold">ORDER BY</span> 
+    e.marks <span class="text-primary-container font-semibold">DESC</span>;</pre>
+<!-- Verification Footer Bar -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest/60 px-space-sm py-1.5 rounded">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                  Example query structure
+                </span>
+<span class="text-outline">•</span>
+<span>Format: ANSI Oracle SQL</span>
+</div>
+<span class="font-mono text-secondary">Review before running in Oracle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- High Precision Architecture (Two-column desktop grid) -->
+<section class="w-full px-margin-desktop py-12 max-w-7xl mx-auto">
+<div class="flex flex-col items-center text-center mb-12">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-mono tracking-widest mb-2">Engine Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Designed to work with your database schema</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">
+        QueryPilot looks at the schema you provide so it can choose the right tables and explain how they connect.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Card 1: Embedded JSON Schemas -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between shadow-lg relative overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="absolute top-0 right-0 p-space-lg text-primary-container/20 group-hover:text-primary-container/40 transition-all">
+<span class="material-symbols-outlined text-[64px]">account_tree</span>
+</div>
+<div>
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-primary-container mb-space-md shadow-md">
+<span class="material-symbols-outlined">data_object</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm font-semibold">Embedded JSON Schemas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+            Your schema can include tables, columns, primary keys and foreign keys. This gives Gemini useful context instead of asking it to guess which tables might be relevant.
+          </p>
+<div class="bg-surface-container-lowest rounded p-space-md font-mono font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-outline-variant font-medium">// Topology Pre-validation</span><br/>
+<span class="text-primary">{ "table": "ENROLLMENTS", "keys": ["student_id", "course_id"], "cardinality": "1:N" }</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-center gap-space-xs font-label-md text-label-md text-primary font-medium">
+<span>See how schema context works</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Strict Oracle & PL/SQL Dialect Validation -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between shadow-lg relative overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="absolute top-0 right-0 p-space-lg text-secondary/20 group-hover:text-secondary/40 transition-all">
+<span class="material-symbols-outlined text-[64px]">rule</span>
+</div>
+<div>
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-secondary mb-space-md shadow-md">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm font-semibold">SQL dialect considerations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+            Generated SQL should be reviewed and tested with your Oracle version. The example below shows the kind of dialect checks you may want to make, including window functions (<code class="font-code-sm text-code-sm text-primary font-mono">DENSE_RANK() OVER (...)</code>), JSON operators, and transaction boundaries before running a query.
+          </p>
+<div class="bg-surface-container-lowest rounded p-space-md font-mono font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-outline-variant font-medium">// Static Dialect Lint</span><br/>
+<span class="text-secondary">Example checks: Oracle syntax • Query review recommended</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-center gap-space-xs font-label-md text-label-md text-secondary font-medium">
+<span>Read about Oracle SQL</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Execution Lifecycle ("How QueryPilot assistant Works" - 3 horizontal desktop cards) -->
+<section class="w-full px-margin-desktop py-16 max-w-7xl mx-auto">
+<div class="flex flex-col items-center text-center mb-12">
+<span class="font-label-sm text-label-sm text-primary uppercase font-mono tracking-widest mb-2">Linear Execution Pipeline</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">How the pieces fit together</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-2">
+        A simple three-step flow: your schema, your question, and a SQL draft you can review.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Step 01 -->
+<div class="bg-surface-container-low rounded-lg p-space-lg shadow-sm flex flex-col relative">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-md text-headline-md font-bold text-primary font-mono">01</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-mono">Your schema</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">Schema Awareness</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Reads a schema file such as <code class="font-code-sm text-code-sm text-primary font-mono">sample schema</code>. The example uses the table and column details, along with key relationships, to give the model context for the question.
+        </p>
+</div>
+<!-- Step 02 -->
+<div class="bg-surface-container-low rounded-lg p-space-lg shadow-sm flex flex-col relative">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-md text-headline-md font-bold text-secondary font-mono">02</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-mono">Gemini assistant</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">LangChain How QueryPilot helps</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Combines your question with the schema and asks the assistant to draft a practical SQL query.
+        </p>
+</div>
+<!-- Step 03 -->
+<div class="bg-surface-container-low rounded-lg p-space-lg shadow-sm flex flex-col relative">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-md text-headline-md font-bold text-primary-container font-mono">03</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary-container font-mono">Reviewable SQL</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">SQL & Logic Proof</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Returns a SQL draft with an explanation of the tables, joins and filters it used. Review the result, then test it in your Oracle environment before running it.
+        </p>
+</div>
+</div>
+</section>
+<!-- Backend API Transparency (POST /ask specification card) -->
+<section class="w-full px-margin-desktop py-12 max-w-7xl mx-auto" id="api-spec">
+<div class="bg-surface-container rounded-xl p-space-xl shadow-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg pb-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-space-sm py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold font-mono">POST</span>
+<span class="font-code-lg text-code-lg text-on-surface font-mono font-semibold">/ask</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-mono">Content-Type: application/json</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A small JSON connection for sending a question and receiving a SQL draft from the local assistant.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline font-mono">Example response format</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- Request JSON -->
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">arrow_forward</span>
+            Request Payload
+          </span>
+<div class="bg-surface-container-lowest p-space-md rounded font-mono font-code-sm text-code-sm overflow-x-auto text-on-surface flex-1">
+<pre><span class="text-secondary">{</span>
+  <span class="text-primary-container">"question"</span>: <span class="text-on-surface">"Display students enrolled in Computer Science with marks > 80"</span>,
+  <span class="text-primary-container">"schema_id"</span>: <span class="text-on-surface">"college_db_schema_v2"</span>,
+  <span class="text-primary-container">"dialect"</span>: <span class="text-on-surface">"oracle_23ai"</span>,
+  <span class="text-primary-container">"options"</span>: <span class="text-secondary">{</span>
+    <span class="text-primary-container">"include_reasoning"</span>: <span class="text-tertiary-fixed">true</span>,
+    <span class="text-primary-container">"max_execution_cost"</span>: <span class="text-tertiary-fixed">150</span>
+  <span class="text-secondary">}</span>
+<span class="text-secondary">}</span></pre>
+</div>
+</div>
+<!-- Response JSON -->
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-container">check_circle</span>
+            Response Payload (200 OK)
+          </span>
+<div class="bg-surface-container-lowest p-space-md rounded font-mono font-code-sm text-code-sm overflow-x-auto text-on-surface flex-1">
+<pre><span class="text-secondary">{</span>
+  <span class="text-primary-container">"status"</span>: <span class="text-on-surface">"success"</span>,
+  <span class="text-primary-container">"sql"</span>: <span class="text-on-surface">"SELECT s.student_id, s.first_name, e.marks FROM college.students s JOIN college.enrollments e ON s.student_id = e.student_id WHERE e.marks > 80;"</span>,
+  <span class="text-primary-container">"schema_checked"</span>: <span class="text-tertiary-fixed">true</span>,
+  <span class="text-primary-container">"response_time_ms"</span>: <span class="text-tertiary-fixed">174.2</span>,
+  <span class="text-primary-container">"entities_referenced"</span>: <span class="text-secondary">[</span><span class="text-on-surface">"students"</span>, <span class="text-on-surface">"enrollments"</span><span class="text-secondary">]</span>
+<span class="text-secondary">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Big Bottom Launch CTA -->
+<section class="w-full px-margin-desktop py-20 max-w-7xl mx-auto text-center">
+<div class="bg-gradient-to-b from-surface-container-high via-surface-container to-surface-container-low rounded-2xl p-space-xl shadow-2xl relative overflow-hidden flex flex-col items-center">
+<!-- Glow ambient -->
+<div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-96 h-40 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="w-12 h-12 rounded bg-primary-container flex items-center justify-center shadow-[0_0_20px_rgba(0,229,255,0.4)] mb-space-md">
+<span class="material-symbols-outlined text-on-primary-container text-[24px]">terminal</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-semibold max-w-2xl tracking-tight mb-space-sm">
+        Have a question about your data?
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-space-lg">
+        Open the workspace, ask in your own words, and review the SQL created from the sample schema.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md z-10">
+<a class="inline-flex items-center gap-space-sm px-space-xl py-3 rounded bg-primary-container text-on-primary-container font-headline-md text-headline-md font-semibold shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:bg-primary transition-all" data-path="query-workspace" href="#workspace">
+<span>Launch Ask a question</span>
+<span class="material-symbols-outlined text-[20px]">launch</span>
+</a>
+<a class="inline-flex items-center gap-space-sm px-space-lg py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md hover:bg-surface-bright transition-all" data-path="schema-explorer" href="#workspace-schema-explorer">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+<span>Browse the sample schema</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript for Live Workbench Switcher -->
+<script>
+    const promptsData = {
+      1: {
+        text: "Display students enrolled in Computer Science with marks > 80",
+        sql: `<span class="text-primary-container font-semibold">SELECT</span> 
+    s.student_id,
+    s.first_name || <span class="text-secondary">' '</span> || s.last_name <span class="text-primary-container font-semibold">AS</span> student_name,
+    d.dept_name,
+    e.course_id,
+    e.marks
+<span class="text-primary-container font-semibold">FROM</span> 
+    college.students s
+<span class="text-primary-container font-semibold">JOIN</span> 
+    college.departments d <span class="text-primary-container font-semibold">ON</span> s.dept_id = d.dept_id
+<span class="text-primary-container font-semibold">JOIN</span> 
+    college.enrollments e <span class="text-primary-container font-semibold">ON</span> s.student_id = e.student_id
+<span class="text-primary-container font-semibold">WHERE</span> 
+    <span class="text-primary font-semibold">UPPER</span>(d.dept_name) = <span class="text-secondary">'COMPUTER SCIENCE'</span>
+    <span class="text-primary-container font-semibold">AND</span> e.marks > <span class="text-tertiary-fixed font-semibold">80</span>
+<span class="text-primary-container font-semibold">ORDER BY</span> 
+    e.marks <span class="text-primary-container font-semibold">DESC</span>;`,
+        steps: [
+          `<span class="font-code-sm text-code-sm text-primary font-mono mt-0.5">01</span><div><span class="text-on-surface font-medium">Tables involved:</span> Resolves entities <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">STUDENTS</code>, <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">ENROLLMENTS</code>, and <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">DEPARTMENTS</code>.</div>`,
+          `<span class="font-code-sm text-code-sm text-secondary font-mono mt-0.5">02</span><div><span class="text-on-surface font-medium">Join Path Validation:</span> <code class="font-code-sm text-code-sm text-on-surface font-mono">s.dept_id = d.dept_id</code> and <code class="font-code-sm text-code-sm text-on-surface font-mono">s.student_id = e.student_id</code> foreign key integrity confirmed.</div>`,
+          `<span class="font-code-sm text-code-sm text-primary-container font-mono mt-0.5">03</span><div><span class="text-on-surface font-medium">Filter Predicate:</span> Applies case-insensitive condition <code class="font-code-sm text-code-sm text-on-surface font-mono">UPPER(d.dept_name) = 'COMPUTER SCIENCE'</code> and numeric threshold <code class="font-code-sm text-code-sm text-on-surface font-mono">e.marks > 80</code>.</div>`
+        ]
+      },
+      2: {
+        text: "Find top 3 highest funded departments with professor count",
+        sql: `<span class="text-primary-container font-semibold">SELECT</span> 
+    d.dept_id,
+    d.dept_name,
+    d.budget_allocation,
+    <span class="text-primary font-semibold">COUNT</span>(p.prof_id) <span class="text-primary-container font-semibold">AS</span> active_professors
+<span class="text-primary-container font-semibold">FROM</span> 
+    college.departments d
+<span class="text-primary-container font-semibold">LEFT JOIN</span> 
+    college.professors p <span class="text-primary-container font-semibold">ON</span> d.dept_id = p.dept_id
+<span class="text-primary-container font-semibold">GROUP BY</span> 
+    d.dept_id, d.dept_name, d.budget_allocation
+<span class="text-primary-container font-semibold">ORDER BY</span> 
+    d.budget_allocation <span class="text-primary-container font-semibold">DESC</span>
+<span class="text-primary-container font-semibold">FETCH FIRST</span> <span class="text-tertiary-fixed font-semibold">3</span> <span class="text-primary-container font-semibold">ROWS ONLY</span>;`,
+        steps: [
+          `<span class="font-code-sm text-code-sm text-primary font-mono mt-0.5">01</span><div><span class="text-on-surface font-medium">Group Aggregation:</span> Identifies aggregate target <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">COUNT(prof_id)</code> grouped along departmental dimensions.</div>`,
+          `<span class="font-code-sm text-code-sm text-secondary font-mono mt-0.5">02</span><div><span class="text-on-surface font-medium">Outer Join Safeguard:</span> Applies <code class="font-code-sm text-code-sm text-on-surface font-mono">LEFT JOIN</code> to ensure funded departments without assigned professors remain visible.</div>`,
+          `<span class="font-code-sm text-code-sm text-primary-container font-mono mt-0.5">03</span><div><span class="text-on-surface font-medium">Oracle SQL Windowing:</span> Implements native ANSI <code class="font-code-sm text-code-sm text-on-surface font-mono">FETCH FIRST 3 ROWS ONLY</code> avoiding legacy ROWNUM overhead.</div>`
+        ]
+      },
+      3: {
+        text: "List active courses lacking prerequisites in Fall 2024",
+        sql: `<span class="text-primary-container font-semibold">SELECT</span> 
+    c.course_id,
+    c.course_title,
+    c.credits,
+    s.term_code
+<span class="text-primary-container font-semibold">FROM</span> 
+    college.courses c
+<span class="text-primary-container font-semibold">JOIN</span> 
+    college.course_schedules s <span class="text-primary-container font-semibold">ON</span> c.course_id = s.course_id
+<span class="text-primary-container font-semibold">WHERE</span> 
+    s.term_code = <span class="text-secondary">'FA2024'</span>
+    <span class="text-primary-container font-semibold">AND NOT EXISTS</span> (
+        <span class="text-primary-container font-semibold">SELECT</span> <span class="text-tertiary-fixed">1</span> 
+        <span class="text-primary-container font-semibold">FROM</span> college.course_prerequisites cp 
+        <span class="text-primary-container font-semibold">WHERE</span> cp.course_id = c.course_id
+    );`,
+        steps: [
+          `<span class="font-code-sm text-code-sm text-primary font-mono mt-0.5">01</span><div><span class="text-on-surface font-medium">Correlated Subquery:</span> Formulates high-efficiency <code class="font-code-sm text-code-sm text-primary bg-surface-container px-1 py-0.5 rounded">NOT EXISTS</code> predicate over self-referencing prerequisite table.</div>`,
+          `<span class="font-code-sm text-code-sm text-secondary font-mono mt-0.5">02</span><div><span class="text-on-surface font-medium">Temporal Filter:</span> Enforces boundary check <code class="font-code-sm text-code-sm text-on-surface font-mono">term_code = 'FA2024'</code> on scheduled sections.</div>`,
+          `<span class="font-code-sm text-code-sm text-primary-container font-mono mt-0.5">03</span><div><span class="text-on-surface font-medium">Query Plan Optimization:</span> Cost analyzer confirms anti-join index usage on <code class="font-code-sm text-code-sm text-on-surface font-mono">cp.course_id</code>.</div>`
+        ]
+      }
+    };
+
+    function switchPrompt(id) {
+      // Update pills
+      [1, 2, 3].forEach(num => {
+        const pill = document.getElementById(`pill-${num}`);
+        if (num === id) {
+          pill.className = "px-space-md py-1 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm hover:bg-primary-container/25 transition-all text-left";
+        } else {
+          pill.className = "px-space-md py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high hover:text-on-surface transition-all text-left";
+        }
+      });
+
+      // Update content
+      const data = promptsData[id];
+      document.getElementById('active-prompt-text').textContent = data.text;
+      document.getElementById('sql-code-display').innerHTML = data.sql;
+
+      const stepsContainer = document.getElementById('reasoning-steps');
+      stepsContainer.innerHTML = data.steps.map(stepHtml => `
+        <div class="p-space-sm bg-surface-container-low rounded flex items-start gap-space-sm">
+          ${stepHtml}
+        </div>
+      `).join('');
+    }
+
+    function copyQuery() {
+      const codeElement = document.getElementById('sql-code-display');
+      navigator.clipboard.writeText(codeElement.innerText).then(() => {
+        const copyText = document.getElementById('copy-text');
+        copyText.textContent = "Copied!";
+        setTimeout(() => {
+          copyText.textContent = "Copy SQL";
+        }, 2000);
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-lg shadow-[0_-1px_0_rgba(255,255,255,0.04)]"><div class="w-full px-margin-desktop flex flex-col sm:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span>A friendly SQL assistant for your database questions</span></div><div class="font-label-sm text-label-sm text-outline">© 2026 QueryPilot assistant. Ask naturally. Review the SQL. Then decide what to run.</div></div></footer></div>
+<div id="workspace-page" style="display:none"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col py-space-md shadow-[1px_0_12px_rgba(0,0,0,0.5)]"><div class="px-space-md mb-space-lg flex items-center justify-between"><a class="flex items-center gap-space-sm" data-path="landing-overview" href="#landing"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center shadow-[0_0_10px_rgba(0,229,255,0.3)]"><span class="material-symbols-outlined text-on-primary-container text-[18px]">terminal</span></div><span class="font-headline-md text-headline-md font-semibold text-on-surface">QueryPilot assistant</span></a><span class="px-1.5 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary-fixed-dim">v2.4</span></div><div class="px-space-md mb-space-sm"><div class="px-space-sm py-1.5 rounded bg-surface-container-low flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Ready when you are</span></div></div><div class="px-space-md mb-space-xs text-outline font-label-sm text-label-sm tracking-wider uppercase">Workspace</div><nav class="flex-1 px-space-sm flex flex-col gap-1" data-active-classes="bg-surface-container-high text-on-surface font-semibold shadow-[inset_2px_0_0_#00e5ff]"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 rounded transition-all bg-surface-container-high text-on-surface font-semibold shadow-[inset_2px_0_0_#00e5ff]" data-path="query-workspace" href="#workspace"><span class="material-symbols-outlined text-[18px]">code_blocks</span><span>Ask a question</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="schema-explorer" href="#schema-explorer"><span class="material-symbols-outlined text-[18px]">account_tree</span><span>Your schema</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="lcel-pipeline-inspector" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span>How it works</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="execution-logs" href="#execution-logs"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Recent questions</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-sm text-body-sm transition-all" data-path="docs" href="#docs"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Tips & examples</span></a></nav><div class="px-space-md pt-space-sm bg-surface-container-lowest shadow-[0_-1px_0_rgba(255,255,255,0.06)]"><div class="flex items-center justify-between p-space-sm rounded bg-surface-container-low"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface">Oracle database</span><span class="font-code-sm text-code-sm text-outline">Sample data loaded</span></div><span class="material-symbols-outlined text-primary-container text-[18px]">database</span></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="text-outline">Chain:</span><span class="text-primary-container font-mono">Plain English → Oracle SQL</span></div><span class="text-outline-variant">/</span><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="text-outline">Assistant:</span><span class="text-secondary font-mono">Gemini</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span>Just a demo workspace</span></div><button class="px-space-md py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-all flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">tune</span>Settings</button><button class="px-space-md py-1.5 rounded bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md font-semibold transition-all shadow-[0_0_12px_rgba(0,229,255,0.35)] flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">play_arrow</span>Ask the assistant</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_8px_rgba(0,229,255,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-14 bg-surface flex-1"><div class="flex flex-col w-full relative">
+<!-- Top Workspace Context Strip -->
+<div id="workspace-context-strip" class="w-full bg-surface-container-lowest px-gutter-desktop py-space-sm flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center flex-wrap gap-space-md min-w-0">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-1 rounded">
+<span class="material-symbols-outlined text-primary-container text-[18px]">data_object</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Working with:</span>
+<span class="font-code-sm text-code-sm text-primary font-medium truncate">College Management sample data</span>
+</div>
+<div class="flex items-center gap-space-xs text-outline-variant text-[14px]">
+<span>•</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-outline">SQL style:</span>
+<span class="bg-surface-container px-2 py-0.5 rounded font-code-sm text-code-sm text-on-surface">Oracle SQL (please review before running)</span>
+</div>
+<div class="flex items-center gap-space-xs text-outline-variant text-[14px]">
+<span>•</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-outline">Connection:</span>
+<code class="bg-surface-container px-2 py-0.5 rounded font-code-sm text-code-sm text-secondary-fixed-dim">POST /ask</code>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-md py-1 rounded bg-surface-container-high shadow-inner">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_rgba(0,229,255,0.7)] animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Gemini</span>
+<span class="text-outline-variant">|</span>
+<span class="font-label-sm text-label-sm text-secondary">AI-assisted SQL</span>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-space-xs" id="inspect-pipeline-btn">
+<span class="material-symbols-outlined text-[15px]">account_tree</span>
+<span>Details</span>
+</button>
+</div>
+</div>
+<!-- Quick Query Recommendation Chips Bar -->
+<div id="quick-query-bar" class="w-full bg-surface-container-low px-gutter-desktop py-space-sm shadow-sm overflow-x-auto flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm uppercase tracking-wider shrink-0 mr-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">bolt</span>
+<span>Try asking:</span>
+</div>
+<button class="chip-item shrink-0 px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all font-code-sm text-code-sm flex items-center gap-space-xs group" onclick="runQuickQuery('Show me all students')">
+<span class="text-outline group-hover:text-primary-container">›</span>
+<span>Show me all students</span>
+</button>
+<button class="chip-item shrink-0 px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all font-code-sm text-code-sm flex items-center gap-space-xs group" onclick="runQuickQuery('What is the average faculty salary?')">
+<span class="text-outline group-hover:text-primary-container">›</span>
+<span>What is the average faculty salary?</span>
+</button>
+<button class="chip-item shrink-0 px-space-md py-1 rounded bg-surface-container-high text-primary font-medium transition-all font-code-sm text-code-sm flex items-center gap-space-xs shadow-sm group" onclick="runQuickQuery('Join students and enrollments to display marks for course CS101')">
+<span class="text-primary-container font-bold">›</span>
+<span>Show CS101 results with student names</span>
+</button>
+<button class="chip-item shrink-0 px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all font-code-sm text-code-sm flex items-center gap-space-xs group" onclick="runQuickQuery('Find students who scored more than 80 in any course')">
+<span class="text-outline group-hover:text-primary-container">›</span>
+<span>Who scored above 80?</span>
+</button>
+<button class="chip-item shrink-0 px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary-fixed-dim transition-all font-code-sm text-code-sm flex items-center gap-space-xs group" onclick="runQuickQuery('CREATE TABLE statement for new library table with student foreign key')">
+<span class="text-secondary group-hover:text-secondary-fixed-dim">DDL</span>
+<span>Create a library table</span>
+</button>
+<button class="chip-item shrink-0 px-space-md py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary-fixed-dim transition-all font-code-sm text-code-sm flex items-center gap-space-xs group" onclick="runQuickQuery('PL/SQL procedure to insert student records safely')">
+<span class="text-secondary group-hover:text-secondary-fixed-dim">PROC</span>
+<span>Write a safe student insert</span>
+</button>
+</div>
+<!-- Studio Main Content: Interactive Canvas & Feed -->
+<div class="w-full px-gutter-desktop py-space-lg pb-32 flex flex-col gap-space-lg">
+<!-- Feed Container -->
+<div class="flex flex-col gap-space-xl" id="conversation-stream">
+<!-- Thread 1: User Turn -->
+<div class="flex items-start gap-space-md max-w-4xl self-end w-full justify-end">
+<div class="flex flex-col items-end gap-1 max-w-2xl">
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>You</span>
+<span>•</span>
+<span>10:42 AM</span>
+</div>
+<div class="bg-surface-container-high px-space-lg py-space-md rounded-xl text-on-surface shadow-md">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Join students and enrollments to display marks for course CS101
+            </p>
+</div>
+<div id="user-query-meta" class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline-variant mt-0.5">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Schema checked</span>
+<span>•</span>
+<span>Oracle SQL draft</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface">person</span>
+</div>
+</div>
+<!-- Thread 1: QueryPilot assistant Turn (Structured 3-Part Output) -->
+<div class="flex items-start gap-space-md max-w-5xl w-full">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center shrink-0 shadow-[0_0_14px_rgba(0,229,255,0.45)]">
+<span class="material-symbols-outlined text-on-primary-container text-[18px]">terminal</span>
+</div>
+<div class="flex-1 flex flex-col gap-space-md min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
+<span class="font-semibold text-primary">QueryPilot assistant</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary text-[11px] font-mono">Assistant response</span>
+<span class="text-outline">• 218ms</span>
+</div>
+<div id="query-status" class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-low font-label-sm text-label-sm text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                SQL draft
+              </span>
+</div>
+</div>
+<!-- The 3-Part Structured Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden flex flex-col">
+<!-- Part 1: Architectural Intent Breakdown -->
+<div id="query-explanation" class="bg-surface-container-low p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary-container font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">architecture</span>
+<span>1. How this query works</span>
+</div>
+<div id="query-stats" class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-code-sm text-code-sm text-on-surface-variant">2 tables used</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-code-sm text-code-sm text-on-surface-variant">1 filter added</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                This example connects each student to their course enrollment using the shared student ID. It then keeps only the <code class="font-code-sm text-code-sm text-secondary bg-surface-container px-1 py-0.5 rounded">CS101</code> results so you can review the marks and grades.
+              </p>
+<!-- Relational Topology Mini Flow -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase">Starts with</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">STUDENTS (s)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">student_id, first_name, last_name, dept_id</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase">Connects with</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">Matching student IDs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">ON s.student_id = e.student_id</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase">Looks for</span>
+<span class="font-code-sm text-code-sm text-tertiary-fixed font-semibold">ENROLLMENTS (e)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">course_id = 'CS101' → marks, grade</span>
+</div>
+</div>
+</div>
+<!-- Part 2: Generated Oracle SQL Studio Container -->
+<div id="query-sql" class="bg-surface-container-lowest p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">data_thresholding</span>
+<span>2. The SQL draft</span>
+</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary-container font-mono">Oracle SQL draft</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center gap-space-xs shadow-[0_0_10px_rgba(0,229,255,0.3)]" onclick="simulateExecution('SELECT s.student_id, s.first_name, s.last_name, e.course_id, e.marks, e.grade FROM students s INNER JOIN enrollments e ON s.student_id = e.student_id WHERE UPPER(e.course_id) = \'CS101\' ORDER BY e.marks DESC;')">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>Preview results</span>
+</button>
+<button class="px-space-md py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-all flex items-center gap-space-xs" onclick="copySqlCode('sql-block-1', this)">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy SQL</span>
+</button>
+</div>
+</div>
+<!-- SQL Code View with Line Numbers & Semantic Colors -->
+<div class="relative rounded bg-surface-container-lowest shadow-inner p-space-md overflow-x-auto">
+<pre class="font-code-md text-code-md leading-relaxed" id="sql-block-1"><span class="text-outline select-none mr-4">01</span><span class="text-primary-container font-semibold">SELECT</span> 
+<span class="text-outline select-none mr-4">02</span>    s.student_id,
+<span class="text-outline select-none mr-4">03</span>    s.first_name || <span class="text-primary">' '</span> || s.last_name <span class="text-primary-container font-semibold">AS</span> student_name,
+<span class="text-outline select-none mr-4">04</span>    s.major,
+<span class="text-outline select-none mr-4">05</span>    e.course_id,
+<span class="text-outline select-none mr-4">06</span>    e.marks,
+<span class="text-outline select-none mr-4">07</span>    e.grade
+<span class="text-outline select-none mr-4">08</span><span class="text-primary-container font-semibold">FROM</span> 
+<span class="text-outline select-none mr-4">09</span>    students s
+<span class="text-outline select-none mr-4">10</span><span class="text-primary-container font-semibold">INNER JOIN</span> 
+<span class="text-outline select-none mr-4">11</span>    enrollments e <span class="text-primary-container font-semibold">ON</span> s.student_id = e.student_id
+<span class="text-outline select-none mr-4">12</span><span class="text-primary-container font-semibold">WHERE</span> 
+<span class="text-outline select-none mr-4">13</span>    <span class="text-secondary font-semibold">UPPER</span>(e.course_id) = <span class="text-primary">'CS101'</span>
+<span class="text-outline select-none mr-4">14</span><span class="text-primary-container font-semibold">ORDER BY</span> 
+<span class="text-outline select-none mr-4">15</span>    e.marks <span class="text-primary-container font-semibold">DESC</span>;</pre>
+</div>
+<!-- Interactive Query Execution Results Tray (collapsible simulation) -->
+<div class="hidden mt-space-sm bg-surface-container p-space-md rounded flex flex-col gap-space-sm" id="execution-results-tray">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">table_view</span>
+<span class="font-semibold">A sample preview</span>
+<span class="text-outline">(Example rows — nothing has been run)</span>
+</div>
+<button aria-label="Close sample preview" class="text-outline hover:text-on-surface text-[14px]" onclick="document.getElementById('execution-results-tray').classList.add('hidden')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-code-sm text-code-sm">
+<thead>
+<tr class="bg-surface-container-high text-outline uppercase text-[10px]">
+<th class="p-2">STUDENT_ID</th>
+<th class="p-2">STUDENT_NAME</th>
+<th class="p-2">MAJOR</th>
+<th class="p-2">COURSE_ID</th>
+<th class="p-2 text-right">MARKS</th>
+<th class="p-2 text-center">GRADE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high text-on-surface">
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="p-2 text-primary font-mono">STU-1082</td>
+<td class="p-2">Elena Rostova</td>
+<td class="p-2 text-on-surface-variant">Computer Science</td>
+<td class="p-2 text-secondary">CS101</td>
+<td class="p-2 text-right font-mono font-semibold">96.5</td>
+<td class="p-2 text-center"><span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">A+</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="p-2 text-primary font-mono">STU-1044</td>
+<td class="p-2">Marcus Vance</td>
+<td class="p-2 text-on-surface-variant">Data Systems</td>
+<td class="p-2 text-secondary">CS101</td>
+<td class="p-2 text-right font-mono font-semibold">91.0</td>
+<td class="p-2 text-center"><span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">A</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="p-2 text-primary font-mono">STU-1099</td>
+<td class="p-2">Amina Diallo</td>
+<td class="p-2 text-on-surface-variant">Computer Science</td>
+<td class="p-2 text-secondary">CS101</td>
+<td class="p-2 text-right font-mono font-semibold">88.5</td>
+<td class="p-2 text-center"><span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">B+</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="p-2 text-primary font-mono">STU-1012</td>
+<td class="p-2">Devon Chen</td>
+<td class="p-2 text-on-surface-variant">Cybersecurity</td>
+<td class="p-2 text-secondary">CS101</td>
+<td class="p-2 text-right font-mono font-semibold">82.0</td>
+<td class="p-2 text-center"><span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">B</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Part 3: Dialect & Execution Strategy -->
+<div id="query-notes" class="bg-surface-container-low p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+<span>3. Before you run anything</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1 bg-surface-container p-space-md rounded">
+<div class="flex items-center gap-space-xs text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-primary-container text-[16px]">filter_alt</span>
+<span>Why this filter is here</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    The example uses <code class="font-code-sm text-code-sm text-on-surface">UPPER(e.course_id)</code> to guard against case-discrepancies in course catalogs. Recommend establishing a function-based index on <code class="font-code-sm text-code-sm text-primary">ENROLLMENTS(UPPER(course_id))</code> if the table becomes large. Check the execution plan and your data before adding an index.
+                  </p>
+</div>
+<div class="flex flex-col gap-1 bg-surface-container p-space-md rounded">
+<div class="flex items-center gap-space-xs text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-secondary text-[16px]">account_tree</span>
+<span>What the database may do</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Oracle’s cost-based optimizer may choose a <span class="text-on-surface font-medium">HASH JOIN</span> or <span class="text-on-surface font-medium">NESTED LOOPS</span> or another join method depending on table sizes and statistics. The string concatenation operator <code class="font-code-sm text-code-sm text-secondary">||</code> is supported by Oracle.
+                  </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-container">shield</span>
+                  Use bind variables when executing user-supplied values
+                </span>
+<span class="text-outline-variant font-mono">For review</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Pipeline State / Response Injection Area -->
+<div class="flex flex-col gap-space-lg" id="dynamic-response-slot"></div>
+</div>
+<!-- Active Loading Spinner indicator (Dynamic) -->
+<div class="hidden flex items-start gap-space-md max-w-5xl w-full" id="query-loading-indicator">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="w-4 h-4 rounded-full border-2 border-primary-container border-t-transparent animate-spin"></span>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex-1 flex flex-col gap-space-sm shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Reading your question and preparing a SQL draft…</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline font-mono">POST /ask</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-2/3 animate-[pulse_1s_infinite]"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline">
+          I’m checking the schema and putting together a helpful answer…
+        </p>
+</div>
+</div>
+<!-- Live Error Banner Display (Dynamic) -->
+<div class="hidden bg-error-container/20 p-space-lg rounded-xl flex items-start gap-space-md" id="query-error-state">
+<div class="w-8 h-8 rounded bg-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-error text-[18px]">warning</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<span class="font-label-md text-label-md text-error font-semibold">I couldn’t reach the assistant</span>
+<p class="font-body-sm text-body-sm text-on-error-container" id="error-message-text">
+          The local assistant is not responding. Check that the Flask app is running, then try again.
+        </p>
+</div>
+<button class="text-error hover:text-on-error-container" onclick="document.getElementById('query-error-state').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Bottom Floating Execution Prompt Console Bar -->
+
+<section id="schema-explorer" class="hidden mx-6 my-8 p-6 rounded-xl bg-surface-container">
+  <h2 class="text-xl font-semibold mb-3">Your schema</h2><pre id="schema-json" class="text-sm whitespace-pre-wrap">Loading schema...</pre>
+</section>
+<section id="lcel-pipelines" class="hidden mx-6 my-8 p-6 rounded-xl bg-surface-container"><h2 class="text-xl font-semibold">How QueryPilot helps</h2><p class="mt-2">Your question + the sample schema → a clear SQL draft and explanation.</p></section>
+<section id="execution-logs" class="hidden mx-6 my-8 p-6 rounded-xl bg-surface-container"><h2 class="text-xl font-semibold">Recent questions</h2><ol id="activity-log" class="mt-2 text-sm"></ol></section>
+<section id="docs" class="hidden mx-6 my-8 p-6 rounded-xl bg-surface-container"><h2 class="text-xl font-semibold">Docs</h2><p class="mt-2">Ask a question in your own words. QueryPilot sends it to the local assistant and shows the draft SQL with an explanation. This app never runs SQL against Oracle.</p></section>
+
+<div class="fixed bottom-0 left-64 right-0 p-space-lg bg-gradient-to-t from-surface via-surface/90 to-transparent pointer-events-none z-30">
+<div class="max-w-5xl mx-auto w-full pointer-events-auto">
+<form class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.6)] p-space-sm flex flex-col gap-space-xs" id="ask-query-form" onsubmit="handleQuerySubmit(event)">
+<div class="flex items-center gap-space-sm px-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">psychology</span>
+<input aria-label="Ask a database question" name="question" autocomplete="off" class="flex-1 bg-transparent py-2.5 px-space-xs font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" id="user-prompt-input" placeholder="Ask in plain English (for example: Which departments have the highest salaries?)" type="text"/>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="hidden md:inline-flex px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-outline-variant font-mono">
+              Oracle SQL
+            </span>
+<button class="px-space-lg py-2 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center gap-space-xs shadow-[0_0_16px_rgba(0,229,255,0.4)]" id="send-prompt-btn" type="submit">
+<span>Ask QueryPilot</span>
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between px-space-sm pt-1 text-[11px] text-outline font-label-sm">
+<div class="flex items-center gap-space-md">
+<span>Using: <strong class="text-on-surface-variant font-mono">sample schema</strong> (6 tables, 42 columns)</span>
+<span>•</span>
+<span>Assistant: <strong class="text-secondary font-mono">Gemini assistant</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span>Press</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-mono text-[10px]">Enter ↵</kbd>
+<span>to get a SQL draft</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed top-16 right-6 z-50 transform translate-y-[-20px] opacity-0 transition-all duration-300 pointer-events-none bg-surface-container-high px-space-md py-2 rounded shadow-xl flex items-center gap-space-xs" id="toast-notification">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface" id="toast-message">SQL copied to clipboard</span>
+</div>
+</div>
+<script>
+function showToast(message) {
+  const toast=document.getElementById('toast-notification');
+  const label=document.getElementById('toast-message');
+  if(label) label.textContent=message;
+  if(toast){toast.classList.remove('opacity-0','translate-y-[-20px]');toast.classList.add('opacity-100','translate-y-0');setTimeout(()=>{toast.classList.add('opacity-0','translate-y-[-20px]');toast.classList.remove('opacity-100','translate-y-0');},2200);}
+}
+function runQuickQuery(question){const input=document.getElementById('user-prompt-input');if(input){input.value=question;input.focus();triggerAskQuery(question);}}
+function handleQuerySubmit(event){event.preventDefault();const input=document.getElementById('user-prompt-input');const question=input.value.trim();if(question){input.value='';triggerAskQuery(question);}}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+function responseSection(response, labels){
+ const heading='(?:\\d+\\.\\s*)?(?:\\*\\*)?'+labels+'(?:\\*\\*)?\\s*:?' ;
+ const next='(?:\\d+\\.\\s*)?(?:\\*\\*)?(?:Understanding|SQL(?: \\/ PL\\/SQL)? Code|Explanation)(?:\\*\\*)?\\s*:?' ;
+ const pattern=new RegExp('(?:^|\\n)\\s*'+heading+'\\s*([\\s\\S]*?)(?=\\n\\s*'+next+'|$)','i');
+ return (response.match(pattern)||[])[1]?.trim()||'';
+}
+function markdownText(value){
+ return String(value).split(/\r?\n/).map(line=>{
+   const bullet=/^\s*\*\s+/.test(line);
+   const content=line.replace(/^\s*\*\s+/,'').trim();
+   let html=escapeHtml(content).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code class="px-1 rounded bg-surface-container text-primary">$1</code>');
+   return content?`<span class="block ${bullet?'pl-4':''}">${bullet?'• ':''}${html}</span>`:'';
+ }).join('');
+}
+function renderAssistantResponse(response, execution){
+ const raw=String(response||'').trim();
+ const understanding=responseSection(raw,'Understanding');
+ const explanation=responseSection(raw,'Explanation');
+ const codeMatch=raw.match(/```(?:sql|plsql)?\s*([\s\S]*?)```/i);
+ const sql=(codeMatch?.[1]||'').trim();
+ const card=document.createElement('section');
+ card.className='w-full max-w-4xl';
+ const intro=understanding||'I read your request and prepared a SQL draft using the available schema.';
+ const detail=explanation||raw.replace(understanding,'').replace(codeMatch?.[0]||'','').trim();
+ card.innerHTML='<div class="text-[15px] leading-7 text-on-surface">'+markdownText(intro)+'</div>'+
+   (sql?'<div class="my-5 overflow-hidden rounded-lg border border-[#30363d] bg-[#0d1117]"><div class="flex h-10 items-center justify-between border-b border-[#30363d] bg-[#161b22] px-4"><span class="text-xs font-medium text-[#b7bdc8]">SQL</span><div class="flex items-center gap-3"><button class="execute-sql flex items-center gap-1.5 rounded bg-primary-container px-2.5 py-1 text-xs font-semibold text-on-primary-container hover:bg-primary" aria-label="Run SQL"><span class="material-symbols-outlined text-[16px]">play_arrow</span><span>Run in database</span></button><button class="response-copy-sql flex items-center gap-1.5 text-xs text-[#b7bdc8] hover:text-white" aria-label="Copy SQL"><span class="material-symbols-outlined text-[16px]">content_copy</span><span>Copy</span></button></div></div><pre class="response-sql m-0 overflow-x-auto p-4 font-mono text-[13px] leading-6 text-[#e6edf3]">'+escapeHtml(sql)+'</pre></div>':'')+
+   (detail?'<div class="text-[15px] leading-7 text-on-surface">'+markdownText(detail)+'</div>':'');
+ if(execution){
+   const result=document.createElement('div');
+   result.className='mt-5 rounded-lg border border-[#30363d] bg-surface-container-lowest p-4';
+   if(execution.error){
+     result.innerHTML='<div class="font-semibold text-red-300">Database error</div><div class="mt-2 text-sm leading-6 text-on-surface">'+escapeHtml(execution.error)+'</div>';
+   }else if(execution.columns){
+     const head=execution.columns.map(column=>'<th class="px-3 py-2 text-left font-semibold">'+escapeHtml(column)+'</th>').join('');
+     const body=(execution.rows||[]).map(row=>'<tr>'+row.map(value=>'<td class="border-t border-[#30363d] px-3 py-2">'+escapeHtml(value)+'</td>').join('')+'</tr>').join('');
+     result.innerHTML='<div class="mb-3 font-semibold text-on-surface">Database result <span class="text-sm font-normal text-outline">('+execution.row_count+' rows)</span></div><div class="overflow-x-auto"><table class="w-full text-left text-sm"><thead><tr>'+head+'</tr></thead><tbody>'+body+'</tbody></table></div>';
+   }else if(execution.executed){
+     result.innerHTML='<div class="font-semibold text-green-300">Query executed successfully</div><div class="mt-1 text-sm text-outline">'+execution.row_count+' row(s) changed.</div>';
+   }
+   card.appendChild(result);
+ }
+ const copySql=card.querySelector('.response-copy-sql');
+ if(copySql) copySql.addEventListener('click',()=>navigator.clipboard.writeText(sql).then(()=>showToast('SQL copied')).catch(()=>showToast('Clipboard unavailable')));
+ const runSql=card.querySelector('.execute-sql');
+ if(runSql) runSql.addEventListener('click',async()=>{
+   runSql.disabled=true;
+   runSql.querySelector('span:last-child').textContent='Running…';
+   try{
+     const response=await fetch('/execute',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sql})});
+     const result=await response.json();
+     const output=document.createElement('div');
+     output.className='mt-5 rounded-lg border border-[#30363d] bg-surface-container-lowest p-4';
+     if(result.error){
+       output.innerHTML='<div class="font-semibold text-red-300">Database error</div><div class="mt-2 text-sm leading-6 text-on-surface">'+escapeHtml(result.error)+'</div>';
+     }else if(result.columns){
+       const head=result.columns.map(column=>'<th class="px-3 py-2 text-left font-semibold">'+escapeHtml(column)+'</th>').join('');
+       const body=(result.rows||[]).map(row=>'<tr>'+row.map(value=>'<td class="border-t border-[#30363d] px-3 py-2">'+escapeHtml(value)+'</td>').join('')+'</tr>').join('');
+       output.innerHTML='<div class="mb-3 font-semibold text-on-surface">Database result <span class="text-sm font-normal text-outline">('+result.row_count+' rows)</span></div><div class="overflow-x-auto"><table class="w-full text-left text-sm"><thead><tr>'+head+'</tr></thead><tbody>'+body+'</tbody></table></div>';
+     }else{
+       output.innerHTML='<div class="font-semibold text-green-300">Query executed successfully</div><div class="mt-1 text-sm text-outline">'+result.row_count+' row(s) changed.</div>';
+     }
+     card.appendChild(output);
+     runSql.querySelector('span:last-child').textContent='Run again';
+   }catch(error){
+     showToast(error.message||'Database request failed');
+     runSql.querySelector('span:last-child').textContent='Run in database';
+   }finally{runSql.disabled=false;}
+ });
+ return card;
+}
+async function triggerAskQuery(question){
+ const slot=document.getElementById('dynamic-response-slot');const loader=document.getElementById('query-loading-indicator');const errorBox=document.getElementById('query-error-state');
+ const sendButton=document.getElementById('send-prompt-btn');
+ if(slot) slot.replaceChildren();
+ if(sendButton) sendButton.disabled=true;
+ if(errorBox) errorBox.classList.add('hidden');if(loader) loader.classList.remove('hidden');
+ const user=document.createElement('div');
+ user.className='ml-auto max-w-3xl rounded-2xl bg-surface-container-high px-4 py-3 text-[15px] leading-6 text-on-surface';
+ user.textContent=question;
+ slot.appendChild(user);
+ try{
+   const response=await fetch('/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question})});
+   const payload=await response.json();if(!response.ok) throw new Error(payload.error||('Request failed ('+response.status+')'));
+   slot.appendChild(renderAssistantResponse(payload.response, payload.execution));
+   const log=document.getElementById('activity-log');if(log){const item=document.createElement('li');item.textContent=question;log.prepend(item);}
+   showToast('Answer ready');
+ }catch(error){const messageText=error.name==='TypeError'?'The local assistant is offline. Start Flask at http://127.0.0.1:5001 and try again.':error.message;if(errorBox){errorBox.classList.remove('hidden');const message=document.getElementById('error-message-text');if(message) message.textContent=messageText;}else showToast(messageText);}
+ finally{if(loader) loader.classList.add('hidden');if(sendButton) sendButton.disabled=false;}
+}
+function copySqlCode(elementId,button){const el=document.getElementById(elementId);if(el)navigator.clipboard.writeText(el.innerText).then(()=>showToast('Copied to clipboard'));}
+function openWorkspacePanel(id){['schema-explorer','lcel-pipelines','execution-logs','docs'].forEach(key=>{const el=document.getElementById(key);if(el)el.classList.toggle('hidden',key!==id);});const target=document.getElementById(id);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}
+document.addEventListener('DOMContentLoaded',()=>{
+ document.querySelectorAll('a[data-path]').forEach(link=>{const path=link.dataset.path;if(['schema-explorer','lcel-pipelines','execution-logs','docs'].includes(path)){link.addEventListener('click',event=>{event.preventDefault();openWorkspacePanel(path);});}});
+ fetch('/api/schema').then(r=>r.json()).then(schema=>{const el=document.getElementById('schema-json');if(el)el.textContent=JSON.stringify(schema,null,2);}).catch(()=>{});
+});
+</script></main></div></div>
+<script>
+function showPage(page) {
+  document.getElementById('landing-page').style.display = page === 'landing' ? '' : 'none';
+  document.getElementById('workspace-page').style.display = page === 'workspace' ? '' : 'none';
+  window.scrollTo(0, 0);
+  if (page === 'workspace') {
+    fetch('/api/schema').then(r => r.json()).then(data => {
+      const el = document.getElementById('schema-json');
+      if (el) el.textContent = JSON.stringify(data.schema ?? data, null, 2);
+    }).catch(() => {});
+  }
+}
+document.addEventListener('click', function(event) {
+  const link = event.target.closest('a[href="#workspace"], a[href="#landing"]');
+  if (!link) return;
+  event.preventDefault();
+  showPage(link.getAttribute('href') === '#workspace' ? 'workspace' : 'landing');
+});
+function syncPageFromHash() {
+  showPage(window.location.hash === '#workspace' ? 'workspace' : 'landing');
+}
+window.addEventListener('hashchange', syncPageFromHash);
+window.addEventListener('DOMContentLoaded', syncPageFromHash);
+</script>
+</body>
+</html>
